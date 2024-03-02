@@ -13,7 +13,7 @@ export default function App() {
           setResult("Error");
         }
       } else {
-        setResult("Incomplete expression");
+        setResult("Error");
       }
     } else if (value === "C") {
       setInput("");

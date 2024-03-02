@@ -6,10 +6,14 @@ export default function App() {
   const [result, setResult] = useState("");
   const handleClick = (value) => {
     if (value === "=") {
-      try {
-        setResult(eval(input));
-      } catch (error) {
-        setResult("Error");
+      if (input.trim() !== "" && !isNaN(input[input.length - 1])) {
+        try {
+          setResult(eval(input));
+        } catch (error) {
+          setResult("Error");
+        }
+      } else {
+        setResult("Incomplete expression");
       }
     } else if (value === "C") {
       setInput("");
